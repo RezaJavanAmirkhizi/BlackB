@@ -1,0 +1,18 @@
+/* Default Colors */
+$Main-Text: #F2F2F2;
+$Main-Background2: #595857;
+$Main-Hover: #F27830;
+$Main-Background: #0D0D0D;
+$Graphic-Design-5-rgba: #F2E527;
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: $Main-Background;
+	padding: 30px;
+}
+
+@import "./mainPage/header.scss";

@@ -1,6 +1,11 @@
+import "../styles/index.scss";
+import MainPage from "./mianPage";
+
 function App() {
 	return (
-    <p>Hello, world!</p>
+		<>
+			<MainPage />
+		</>
 	);
 }
 
