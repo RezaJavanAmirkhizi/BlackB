@@ -1,8 +1,8 @@
 /* Default Colors */
 $Main-Text: #F2F2F2;
-$Main-Background2: #595857;
-$Main-Hover: #F27830;
-$Main-Background: #0D0D0D;
+$Main-Background2: #F2B6A0;
+$Main-Hover: #297350;
+$Main-Background: #2C3740;
 $Graphic-Design-5-rgba: #F2E527;
 
 *{
@@ -12,7 +12,7 @@ $Graphic-Design-5-rgba: #F2E527;
 
 body {
 	background-color: $Main-Background;
-	padding: 30px;
 }
 
 @import "./mainPage/header.scss";
+@import "./mainPage/firstPart.scss"
