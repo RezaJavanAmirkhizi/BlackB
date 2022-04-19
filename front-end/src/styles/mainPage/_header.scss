@@ -48,16 +48,16 @@
 				align-items: center;
 				padding-top: 20px;
 				gap: 1rem;
-				left: -10%;
+				left: -20%;
 				z-index: 100;
 
 				.sub-item {
 					list-style: none;
 					font-size: 25px;
-					border-bottom: 2px solid $Main-Text;
+					border-bottom: 3px solid $Main-Text;
 
 					&:hover {
-						border-bottom: 2px solid $Main-Hover;
+						border-bottom: 3px solid $Main-Hover;
 					}
 				}
 			}

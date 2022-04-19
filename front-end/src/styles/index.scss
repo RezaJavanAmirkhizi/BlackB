@@ -1,9 +1,20 @@
 /* Default Colors */
-$Main-Text: #F2F2F2;
-$Main-Background2: #F2B6A0;
-$Main-Hover: #297350;
-$Main-Background: #2C3740;
-$Graphic-Design-5-rgba: #F2E527;
+$Main-Text: #000000;
+$Main-Background2: #F2D785;
+$Main-Hover: #7278F2;
+$Main-Background: #F2F2F2;
+$Graphic-Design-5-rgba: #BF5D39;
+
+@mixin button {
+	border-radius: 8px;
+	text-align: center;
+	background-color: $Main-Hover;
+	padding: 7.5px 55px;
+	font-size: 18px;
+	outline: none;
+	border: none;
+	color: white;
+}
 
 *{
 	margin: 0;
@@ -14,5 +25,6 @@ body {
 	background-color: $Main-Background;
 }
 
-@import "./mainPage/header.scss";
-@import "./mainPage/firstPart.scss"
+@import "./mainPage/header";
+@import "./mainPage/firstPart";
+@import "./auth/sign";
