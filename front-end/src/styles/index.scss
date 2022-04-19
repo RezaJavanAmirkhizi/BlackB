@@ -3,7 +3,7 @@ $Main-Text: #000000;
 $Main-Background2: #F2D785;
 $Main-Hover: #7278F2;
 $Main-Background: #F2F2F2;
-$Graphic-Design-5-rgba: #BF5D39;
+$Main-Card: #474554;
 
 @mixin button {
 	border-radius: 8px;
@@ -28,3 +28,4 @@ body {
 @import "./mainPage/header";
 @import "./mainPage/firstPart";
 @import "./auth/sign";
+@import "./mainPage/card";
