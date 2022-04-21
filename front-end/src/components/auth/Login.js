@@ -31,8 +31,8 @@ const Login = () => {
 		axios
 			.post("/auth/token", params, config)
 			.then((response) => {
-				console.log(response);
-				console.log(response.status);
+				console.log(response.data.access_token);
+				localStorage.setItem('access_token', JSON.stringify(response.data.access_token));
 			})
 
 			.catch((error) => {
