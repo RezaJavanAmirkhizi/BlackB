@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightToBracket, faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
 	return (
 		<div className="header">
 			<div className="right-items">
@@ -19,12 +19,15 @@ const Header = () => {
 			</div>
 			<div className="left-items">
 				<FontAwesomeIcon className="icon" icon={faMagnifyingGlass} />
-				<Link className="to-log" to="/login">
-					<FontAwesomeIcon
-						className="icon"
-						icon={faUser}
-					/>
-				</Link>
+				{props.user ? (
+					<Link className="to-log" to="/dashboard">
+						<FontAwesomeIcon className="icon" icon={faUser} />
+					</Link>
+				) : (
+					<Link className="to-log" to="/login">
+						<FontAwesomeIcon className="icon" icon={faArrowRightToBracket} />
+					</Link>
+				)}
 			</div>
 		</div>
 	);
