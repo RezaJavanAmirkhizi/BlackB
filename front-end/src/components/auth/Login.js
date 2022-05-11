@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from "../../api/axios";
+import loggedUser from "../../data/actions/loggedUser";
 
-const Login = () => {
+const Login = (props) => {
 	const errRef = useRef();
 
 	const [errorMessage, setErrorMessage] = useState("");
@@ -16,7 +18,6 @@ const Login = () => {
 	const login = (e) => {
 		e.preventDefault();
 
-
 		const params = new URLSearchParams();
 		params.append("username", user.username);
 		params.append("password", user.password);
@@ -27,12 +28,19 @@ const Login = () => {
 			},
 		};
 
-		console.log(user);
 		axios
 			.post("/auth/token", params, config)
 			.then((response) => {
-				console.log(response.data.access_token);
-				localStorage.setItem('access_token', JSON.stringify(response.data.access_token));
+				localStorage.setItem(
+					"access_token",
+					JSON.stringify(response.data.access_token)
+				);
+				localStorage.setItem(
+					"userID",
+					JSON.stringify(response.data.user_id)
+				);
+				props.loggedUser();
+				setSuccess(true);
 			})
 
 			.catch((error) => {
@@ -85,4 +93,10 @@ const Login = () => {
 	);
 };
 
-export default Login;
+const mapStateToProps = (state) => {
+	return {
+		user: state.user,
+	};
+};
+
+export default connect(mapStateToProps, { loggedUser })(Login);
