@@ -16,16 +16,18 @@ const Dashboard = () => {
 
 	let leftSlide;
 
-	if(isSelected === "profile") {
-		leftSlide = <Profile />
+	if (isSelected === "profile") {
+		leftSlide = <Profile />;
+	} else if (isSelected === "createP") {
+		leftSlide = <CreatePost />;
+	} else if (isSelected === "editP") {
+		leftSlide = <EditPost />;
 	}
-	else if(isSelected === "createP"){
-		leftSlide = <CreatePost />
 
-	}
-	else if(isSelected === "editP"){
-		leftSlide = <EditPost />
-	}
+	const logOut = () => {
+		localStorage.removeItem("access_token");
+		localStorage.removeItem("userID");
+	};
 
 	return (
 		<div className="dashboard">
@@ -35,7 +37,7 @@ const Dashboard = () => {
 						className={
 							isSelected === "profile" ? "selected" : "item"
 						}
-                        onClick={() => setIsSelected('profile')}
+						onClick={() => setIsSelected("profile")}
 					>
 						<FontAwesomeIcon icon={faUser} />
 						<li>Profile</li>
@@ -44,29 +46,25 @@ const Dashboard = () => {
 						className={
 							isSelected === "createP" ? "selected" : "item"
 						}
-                        onClick={() => setIsSelected('createP')}
+						onClick={() => setIsSelected("createP")}
 					>
 						<FontAwesomeIcon icon={faCirclePlus} />
 						<li>Create Post</li>
 					</div>
 					<div
-						className={
-							isSelected === "editP" ? "selected" : "item"
-						}
-                        onClick={() => setIsSelected('editP')}
+						className={isSelected === "editP" ? "selected" : "item"}
+						onClick={() => setIsSelected("editP")}
 					>
 						<FontAwesomeIcon icon={faCircleMinus} />
 						<li>Edit Post</li>
 					</div>
 				</div>
-				<Link to="/" className="link">
+				<Link to="/" onClick={() => logOut()} className="link">
 					<FontAwesomeIcon icon={faRightFromBracket} />
 					Log out
 				</Link>
 			</div>
-			<div className="left-side">
-				{leftSlide}
-			</div>
+			<div className="left-side">{leftSlide}</div>
 		</div>
 	);
 };
