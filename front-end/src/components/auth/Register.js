@@ -223,17 +223,14 @@ const Register = () => {
 							Must match the first password input field.
 						</p>
 						<button className="submit">Register</button>
-						<p>
-							Already have an account?{" "}
-							<Link
-								to="/login"
-								style={{ textDecoration: "none" }}
-							>
-								Login
-							</Link>
-						</p>
 					</>
 				)}
+				<p>
+					Already have an account?{" "}
+					<Link to="/login" style={{ textDecoration: "none" }}>
+						Login
+					</Link>
+				</p>
 			</form>
 		</div>
 	);
