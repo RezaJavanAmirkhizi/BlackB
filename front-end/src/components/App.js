@@ -3,6 +3,7 @@ import MainPage from "./mianPage";
 import { Routes, Route } from "react-router-dom";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
+import Dashboard from "./account/Dashboard"
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 			/>
 			<Route exact path="/login" element={<Login />} />
 			<Route exact path="/register" element={<Register />} />
+			<Route exact path="/dashboard" element={<Dashboard />} />
 		</Routes>
 	);
 }
