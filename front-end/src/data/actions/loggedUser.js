@@ -3,7 +3,6 @@ import axios from "../../api/axios";
 const loggedUser = () => (dispatch) => {
 
 	const id = localStorage.getItem("userID");
-	console.log(id);
 
 	axios
 		.get(`/dashboard/${id}`)
