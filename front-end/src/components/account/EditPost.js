@@ -1,4 +1,4 @@
-import Card from "../mianPage/Card";
+import Card from "../mianPage/Post";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faEraser } from "@fortawesome/free-solid-svg-icons";
 

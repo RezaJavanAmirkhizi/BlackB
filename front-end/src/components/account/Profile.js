@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
 import loggedUser from "../../data/actions/loggedUser";
+import { Link } from "react-router-dom";
 
 function Profile(props) {
 	const [userInfo, setUserInfo] = useState(props.user[0]);
@@ -24,7 +25,14 @@ function Profile(props) {
 				<p>Username:</p>
 				<p>{userInfo.username}</p>
 			</div>
-			<button className="change">Change Password</button>
+			<div className="row">
+				<Link to="/changePassword">
+					<button className="change">Change Password</button>
+				</Link>
+				<Link to="/completeInfo">
+					<button className="change">Complete information</button>
+				</Link>
+			</div>
 		</div>
 	) : (
 		<div className="dashboard-boxes">

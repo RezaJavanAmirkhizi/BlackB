@@ -31,7 +31,7 @@ const Dashboard = () => {
 
 	return (
 		<div className="dashboard">
-			<div className="right-side">
+			<div className="left-side">
 				<div className="items">
 					<div
 						className={
@@ -64,7 +64,7 @@ const Dashboard = () => {
 					Log out
 				</Link>
 			</div>
-			<div className="left-side">{leftSlide}</div>
+			<div className="right-side">{leftSlide}</div>
 		</div>
 	);
 };
