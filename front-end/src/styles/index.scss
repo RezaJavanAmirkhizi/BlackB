@@ -1,31 +1,93 @@
 /* Default Colors */
-$Main-Text: #000000;
-$Main-Background2: #F2D785;
-$Main-Hover: #7278F2;
-$Main-Background: #F2F2F2;
-$Main-Card: #474554;
+$Main-Text: #f2f2f2;
+$Main-Background2: #086972;
+$Main-Hover: #a7ff83;
+$Main-Background: #071a52;
+$Main-Card: #17b978;
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Scheherazade+New:wght@400;700&display=swap");
+
+@mixin main-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
 
 @mixin button {
 	border-radius: 8px;
 	text-align: center;
-	background-color: $Main-Hover;
+	background-color: $Main-Background2;
 	padding: 7.5px 55px;
 	font-size: 18px;
 	outline: none;
 	border: none;
 	color: white;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #16a2ae;
+	}
 }
 
-*{
+@mixin item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 60px;
+	cursor: pointer;
+	gap: 10px;
+	font-size: 20px;
+	border-radius: 10px;
+
+	&:hover {
+		background-color: $Main-Card;
+	}
+
+	li {
+		list-style: none;
+	}
+}
+
+* {
 	margin: 0;
 	padding: 0;
+	font-family: "Baloo Bhaijaan 2", cursive;
 }
 
 body {
 	background-color: $Main-Background;
 }
 
+.link {
+	text-decoration: none;
+	color: #000000;
+	font-size: 18px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	&:hover {
+		color: $Main-Hover;
+	}
+}
+
+input {
+	padding: 10px 20px;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+}
+
+label {
+	font-size: 20px;
+	cursor: pointer;
+}
+
 @import "./mainPage/header";
 @import "./mainPage/firstPart";
 @import "./auth/sign";
 @import "./mainPage/card";
+@import "./account/dashboard";

@@ -1,0 +1,116 @@
+.dashboard {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	background-color: $Main-Background;
+	color: $Main-Text;
+
+	.left-side {
+		width: 20%;
+		background-color: $Main-Background2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px;
+
+		.items {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+
+			.item {
+				@include item;
+			}
+
+			.selected {
+				@include item;
+				background-color: $Main-Card;
+			}
+		}
+	}
+
+	.right-side {
+		flex-basis: 78%;
+	}
+
+	.row {
+		display: flex;
+		width: 60%;
+		align-items: center;
+		justify-content: space-between;
+		gap: 30px;
+
+		p {
+			font-size: 20px;
+		}
+
+		.tag {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			width: 184px;
+
+			.tag-title {
+				display: flex;
+				flex-wrap: wrap;
+				width: 150%;
+				gap: 3px;
+				align-items: center;
+				justify-content: flex-start;
+
+				span {
+					padding: 0 5px;
+					border-radius: 5px;
+					background-color: $Main-Background2;
+				}
+			}
+		}
+	}
+
+	.row-edit {
+		display: flex;
+		width: 90%;
+		align-items: center;
+		justify-content: space-between;
+		gap: 30px;
+
+		.card {
+			width: 90%;
+		}
+
+		p {
+			font-size: 20px;
+		}
+
+		.icon {
+			font-size: 20px;
+			cursor: pointer;
+
+			&:hover {
+				color: $Main-Hover;
+			}
+		}
+	}
+}
+
+.dashboard-boxes {
+	@include main-container;
+	align-items: center;
+	justify-content: space-around;
+
+	.change {
+		@include button;
+	}
+
+	textarea {
+		padding: 10px 20px;
+		width: 220px;
+		height: 80px;
+		border-radius: 10px;
+		outline: none;
+		border: none;
+		resize: none;
+	}
+}
