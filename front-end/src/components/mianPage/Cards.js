@@ -4,17 +4,22 @@ import posts from "../../data/actions/posts";
 import { useEffect, useState } from "react";
 
 const Cards = (props) => {
-	const [allPosts, setAllPosts] = useState([]);
+	const [allPosts, setAllPosts] = useState(null);
 
 	useEffect(() => props.posts(), []);
 	useEffect(() => {
-		setAllPosts([...allPosts, props.post]);
-        console.log(allPosts);
+		setAllPosts(props.post[0]);
 	}, [props.post]);
 
 	return (
 		<div className="cards">
-			<Post />
+			{allPosts == null ?   (
+				<h1>Loading...</h1>
+			):(
+				allPosts.map((post, index) => {
+					return <Post post={post} key={index} />;
+				})
+			)}
 		</div>
 	);
 };
