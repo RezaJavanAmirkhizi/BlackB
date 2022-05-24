@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
 
-const Post = () => {
+const Post = (props) => {
 	return (
 		<div className="card">
 			<div className="picture">
